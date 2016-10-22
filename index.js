@@ -51,24 +51,24 @@ function callback() {
 
   /*** Stats ***/
   var stats = {
-    'FREE': 0,
-    'NORMAL': 0,
-    'BUSY': 0
+    'FREE': [],
+    'NORMAL': [],
+    'BUSY': []
   };
 
   for(var i = 0; i < 24; i++) {
 
     if(aver - sd > data[i]) {
 
-      stats['FREE']++;
+      stats['FREE'].push(i);
 
     } else if(aver + sd < data[i]) {
 
-      stats['BUSY']++;
+      stats['BUSY'].push(i);
 
     } else {
 
-      stats['NORMAL']++;
+      stats['NORMAL'].push(i);
 
     }
 
